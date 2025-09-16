@@ -1,4 +1,4 @@
-import { pool } from "../src/db";
+import { pool } from "../dist/db.js";
 
 async function main() {
   await pool.query(`
