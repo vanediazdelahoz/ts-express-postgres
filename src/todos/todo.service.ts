@@ -32,6 +32,6 @@ export async function updateTodo(id: number, title?: string, done?: boolean): Pr
 }
 
 export async function deleteTodo(id: number): Promise<boolean> {
-  const r = await pool.query("DELETE FROM todos WHERE id=$1", [id]);
-  return r.rowCount > 0;
+  const r = await pool.query("DELETE FROM todos WHERE id=$1", [id]);
+  return (r.rowCount ?? 0) > 0;
 }
